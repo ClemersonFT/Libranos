@@ -9,12 +9,16 @@ export const style = StyleSheet.create({
         backgroundColor:"#01356c",
         padding:20
     },
+
+
     boxTop:{
         height:Dimensions.get("window").height/1.8,
         width:"100%",
         justifyContent:"center",
         alignItems:"center",
     },
+
+
     inputBox:{
         width:"100%",
         height:55,
@@ -24,6 +28,8 @@ export const style = StyleSheet.create({
         justifyContent:"center",
         backgroundColor:"#9ecce7"
     },
+
+
     buttomBox:{
         color:"#9ecce7",
         width:"100%",
@@ -35,25 +41,36 @@ export const style = StyleSheet.create({
         margin:5,
         backgroundColor:"#9ecce7"
     },
+  
+    
+    buttomPressed: {
+    backgroundColor: "#7bb9dc" 
+    },
+
+
     text:{
         fontSize:90,
-        fontFamily:"Gently Sans",
+        fontFamily:"GentleSansBook",
         color:"#9ecce7"
     },
+
     text2:{
         fontSize:19,
-        fontFamily:"Gently Sans",
+        fontFamily:"Asap",
         color:"#9ecce7", 
         marginBottom:10
     },
-      inputText:{
+
+    inputText:{
         fontSize:27,
-        paddingHorizontal:30,
-        
+        paddingHorizontal:30, 
     }, 
-      buttomText:{
-        fontSize:27
+
+    buttomText:{
+        fontSize:27,
+        color:"#01356c"
     },
+
     imagem:{
         height:300,
         width:"100%"

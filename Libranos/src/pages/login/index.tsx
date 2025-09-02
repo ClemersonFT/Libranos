@@ -4,7 +4,8 @@ import {
     Text,
     View,
     Image,
-    TextInput
+    TextInput,
+    Pressable
 } from "react-native";
 
 import { style } from "./styles";
@@ -26,26 +27,32 @@ export default function Login (){
             </View>
 
             <View style={style.inputBox}>
-                    <TextInput />
-                    <Text style={style.inputText}>E-mail</Text>
+                    <TextInput style={style.inputText} 
+                        placeholder="E-mail"
+                        placeholderTextColor="#01356c" 
+                        />
             </View>
                 
             <View style={style.inputBox}>
-                    <TextInput />
-                    <Text style={style.inputText}>Senha</Text>
+                    <TextInput style={style.inputText} 
+                        placeholder="Senha"
+                        placeholderTextColor="#01356c"
+                        secureTextEntry 
+                    />
             </View>
+            
+            <Pressable style={({ pressed }) => 
+                [style.buttomBox,pressed && style.buttomPressed]}
+                onPress={() => console.log("Entrar clicado!")}>
+                <Text style={style.buttomText}>Entrar</Text>
+            </Pressable>   
 
-            <View style={style.buttomBox}>
-                    <TextInput />
-                    <Text style={style.buttomText}>Entrar</Text>
-            </View>    
 
-            <View style={style.buttomBox}>
-                    <TextInput />
-                    <Text style={style.buttomText}>Cadastrar</Text>
-            </View>
-
-         
+            <Pressable style={({ pressed }) => 
+            [style.buttomBox,pressed && style.buttomPressed]}
+            onPress={() => console.log("Cadastrar clicado!")}>
+                <Text style={style.buttomText}>Cadastrar</Text>
+            </Pressable>  
 
         </View>
     )
