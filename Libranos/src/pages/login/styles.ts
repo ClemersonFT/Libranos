@@ -1,18 +1,15 @@
 import { Dimensions, StyleSheet } from "react-native";
-import { themas } from "../../global/themes";
 
 export const style = StyleSheet.create({
     container:{
         flex:1,
-        alignItems:"center",
-        justifyContent:"center",
         backgroundColor:"#01356c",
         padding:20
     },
 
 
     boxTop:{
-        height:Dimensions.get("window").height/1.8,
+        height:Dimensions.get("window").height/1.7,
         width:"100%",
         justifyContent:"center",
         alignItems:"center",
@@ -50,13 +47,12 @@ export const style = StyleSheet.create({
 
     text:{
         fontSize:90,
-        fontFamily:"GentleSansBook",
-        color:"#9ecce7"
+        color:"#9ecce7",
+        fontFamily:"GentleSans"
     },
 
     text2:{
         fontSize:19,
-        fontFamily:"Asap",
         color:"#9ecce7", 
         marginBottom:10
     },
@@ -71,7 +67,7 @@ export const style = StyleSheet.create({
         color:"#01356c"
     },
 
-    imagem:{
+    logo:{
         height:300,
         width:"100%"
     }

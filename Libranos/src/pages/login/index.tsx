@@ -9,10 +9,17 @@ import {
 } from "react-native";
 
 import { style } from "./styles";
-import Logo from "../../assets/LIBRANOS.png"
+import Logo from "../../assets/LIBRANOS.png";
+import { useNavigation } from "@react-navigation/native";
+import type { StackNavigationProp } from "@react-navigation/stack";
+import type { RootStackParamList } from "../../../App";
+
+type NavigationProp = StackNavigationProp<RootStackParamList, "Login">;
 
 export default function Login (){
+     const navigation = useNavigation<NavigationProp>();
     return (
+      
         <View style={style.container}>
 
 
@@ -21,7 +28,7 @@ export default function Login (){
                 <Text style={style.text2}>Libras na palma da sua mão</Text>
                 <Image  
                 source={Logo}
-                style={style.imagem}
+                style={style.logo}
                 resizeMode="contain"
                 />
             </View>
@@ -29,14 +36,12 @@ export default function Login (){
             <View style={style.inputBox}>
                     <TextInput style={style.inputText} 
                         placeholder="E-mail"
-                        placeholderTextColor="#01356c" 
                         />
             </View>
                 
             <View style={style.inputBox}>
                     <TextInput style={style.inputText} 
                         placeholder="Senha"
-                        placeholderTextColor="#01356c"
                         secureTextEntry 
                     />
             </View>
@@ -47,10 +52,9 @@ export default function Login (){
                 <Text style={style.buttomText}>Entrar</Text>
             </Pressable>   
 
-
             <Pressable style={({ pressed }) => 
             [style.buttomBox,pressed && style.buttomPressed]}
-            onPress={() => console.log("Cadastrar clicado!")}>
+            onPress={() => navigation.navigate("Cadastro")}>
                 <Text style={style.buttomText}>Cadastrar</Text>
             </Pressable>  
 
