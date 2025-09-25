@@ -48,7 +48,7 @@ export const style = StyleSheet.create({
     text:{
         fontSize:90,
         color:"#9ecce7",
-        fontFamily:"GentleSans"
+        fontFamily:"../../assets/fonts/GentySans-Regular.ttf",
     },
 
     text2:{

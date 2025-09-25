@@ -48,7 +48,7 @@ export default function Login (){
             
             <Pressable style={({ pressed }) => 
                 [style.buttomBox,pressed && style.buttomPressed]}
-                onPress={() => console.log("Entrar clicado!")}>
+                onPress={() => navigation.navigate("Modulo")}>
                 <Text style={style.buttomText}>Entrar</Text>
             </Pressable>   
 

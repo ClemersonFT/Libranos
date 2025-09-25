@@ -76,7 +76,7 @@ export default function Cadastro (){
 
                 <Pressable style={({ pressed }) => 
                     [style.buttomBox,pressed && style.buttomPressed]}
-                    onPress={() => navigation.navigate("Cadastro")}>
+                    onPress={() => navigation.navigate("Modulo")}>
                     <Text style={style.buttomText}>Cadastrar</Text>
                 </Pressable>  
 

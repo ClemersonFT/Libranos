@@ -60,6 +60,7 @@ export const style = StyleSheet.create({
 
     text: {
         fontSize:80,
+        fontFamily:"../../assets/fonts/GentySans-Regular.ttf",
         color:"#9ecce7"
     },
 
