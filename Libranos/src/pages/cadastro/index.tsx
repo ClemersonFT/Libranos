@@ -27,11 +27,11 @@ interface RegisterRecord {
 export default function Cadastro() {
     const navigation = useNavigation<NavigationProp>();
     const [confirmPassword, setConfirmPassword] = React.useState("");
-    const registerRecord: RegisterRecord = {
+    const [registerRecord, setRegisterRecord] = React.useState<RegisterRecord>({
         fullName: "",
         email: "",
-        password: "",
-    };
+        password: ""
+    });
 
     const handleRegister = async () => {
         try {
@@ -39,6 +39,12 @@ export default function Cadastro() {
 
             if (response.status === 200) {
                 navigation.navigate("Login");
+                setRegisterRecord({
+                    fullName: "",
+                    email: "",
+                    password: ""
+                });
+                setConfirmPassword("");
             }
         } catch (error: any) {
             console.error("Registration failed: ", error);
@@ -80,19 +86,19 @@ export default function Cadastro() {
 
             <View style={style.boxMid}>
                 <View style={style.inputBox}>
-                    <TextInput value={registerRecord.fullName} onChangeText={(text) => registerRecord.fullName = text} style={style.inputText}
+                    <TextInput value={registerRecord.fullName} onChangeText={(text) => setRegisterRecord({ ...registerRecord, fullName: text })} style={style.inputText}
                         placeholder="Nome completo"
                     />
                 </View>
 
                 <View style={style.inputBox}>
-                    <TextInput value={registerRecord.email} onChangeText={(text) => registerRecord.email = text} style={style.inputText}
+                    <TextInput value={registerRecord.email} onChangeText={(text) => setRegisterRecord({ ...registerRecord, email: text })} style={style.inputText}
                         placeholder="E-mail"
                     />
                 </View>
 
                 <View style={style.inputBox}>
-                    <TextInput value={registerRecord.password} onChangeText={(text) => registerRecord.password = text} style={style.inputText}
+                    <TextInput value={registerRecord.password} onChangeText={(text) => setRegisterRecord({ ...registerRecord, password: text })} style={style.inputText}
                         placeholder="Senha"
                     />
                 </View>
@@ -108,10 +114,10 @@ export default function Cadastro() {
 
             <View style={style.boxBottom}>
 
-                <Pressable style={({ pressed }) =>
+                <Pressable disabled={!isValid()} style={({ pressed }) =>
                     [style.buttomBox, pressed && style.buttomPressed]}
                     onPress={() => handleRegister()}>
-                    <Text disabled={!isValid()} style={style.buttomText}>Cadastrar</Text>
+                    <Text style={style.buttomText}>Cadastrar</Text>
                 </Pressable>
 
             </View>
