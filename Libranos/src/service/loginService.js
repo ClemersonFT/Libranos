@@ -14,3 +14,12 @@ export async function login(email, password) {
     throw new Error("Login failed: " + error);
   }
 }
+
+export async function register(registerRecord) {
+  try {
+    const response = await axios.post(`${host}/auth/signup`, registerRecord);
+    return response;
+  } catch (error) {
+    throw new Error("Registration failed: " + error);
+  }
+}
